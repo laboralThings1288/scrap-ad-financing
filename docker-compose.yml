@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    volumes:
+      - ./data:/data
+    depends_on:
+      - db-init
+
+  db-init:
+    image: alpine:latest
+    volumes:
+      - ./data:/data
+      - ./src/main/resources/db:/db
+    command: >
+      /bin/sh -c "
+        if [ ! -f /data/scrapad.db ]; then
+          touch /data/scrapad.db;
+          cat /db/init.sql | sqlite3 /data/scrapad.db;
+        fi
+      " 

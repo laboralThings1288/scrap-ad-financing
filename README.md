@@ -2,6 +2,16 @@
 
 Este proyecto implementa un sistema de financiación para el marketplace ScrapAd, permitiendo a los vendedores recibir financiación basada en reglas de negocio específicas.
 
+## Instalación
+
+1. Clonar el repositorio:
+```bash
+git clone https://github.com/laboralThings1288/scrap-ad-financing.git
+cd scrap-ad-financing
+```
+
+2. Copiar el archivo de base de datos proporcionado (`scrapad_assigment.db`) a la raíz del proyecto
+
 ## Requisitos
 
 - Java 17
